@@ -30,19 +30,6 @@ router.get('/', (req, res) => {
     });
 });
 
-
-// It Will Show all the students data.
-router.get('/', (req, res) => {
-    const sql = 'SELECT * FROM students';
-    dbCon.query(sql, (err, result) => {
-        if (err) {
-            res.status(500).send('Error fetching students');
-            throw err;
-        }
-        res.json(result);
-    });
-});
-
 // It Will Show student with specific id only.
 router.get('/:id', (req, res) => {
     const id = req.params.id;
